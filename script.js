@@ -16,13 +16,17 @@ function updateTimers() {
 }
 
 // Hug Animation
-document.getElementById('hug-btn').addEventListener('click', () => {
-    const heart = document.getElementById('heart-overlay');
-    heart.classList.remove('hidden');
-    heart.classList.add('animate-heart');
+const hugBtn = document.getElementById('hug-btn');
+const heartOverlay = document.getElementById('heart-overlay');
+
+hugBtn.addEventListener('click', () => {
+    heartOverlay.classList.remove('hidden');
+    heartOverlay.classList.add('animate-heart');
+    
+    // Hide it again after the animation ends
     setTimeout(() => {
-        heart.classList.remove('animate-heart');
-        heart.classList.add('hidden');
+        heartOverlay.classList.add('hidden');
+        heartOverlay.classList.remove('animate-heart');
     }, 1500);
 });
 
@@ -54,3 +58,8 @@ document.getElementById('surprise-btn').addEventListener('click', () => {
 
 // Start the timers
 updateTimers();
+const toggleBtn = document.getElementById('dark-mode-toggle');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.innerText = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
