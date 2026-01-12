@@ -81,3 +81,16 @@ document.getElementById('surprise-btn').addEventListener('click', () => {
 // Initialize on Load
 updateTimers();
 displayMOTD();
+// 5. Bucket List Persistence
+const checkboxes = document.querySelectorAll('.list-item input[type="checkbox"]');
+
+checkboxes.forEach((checkbox, index) => {
+    // Load saved state
+    const saved = localStorage.getItem(`bucket-item-${index}`);
+    if (saved === 'true') checkbox.checked = true;
+
+    // Save on click
+    checkbox.addEventListener('change', () => {
+        localStorage.setItem(`bucket-item-${index}`, checkbox.checked);
+    });
+});
