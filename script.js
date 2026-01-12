@@ -43,8 +43,11 @@ const hugBtn = document.getElementById('hug-btn');
 const heartOverlay = document.getElementById('heart-overlay');
 
 hugBtn.addEventListener('click', () => {
+    // 1. Show the heart and start animation
     heartOverlay.classList.remove('hidden');
     heartOverlay.classList.add('animate-heart');
+    
+    // 2. Clean up after 1.5 seconds so it can be clicked again
     setTimeout(() => {
         heartOverlay.classList.add('hidden');
         heartOverlay.classList.remove('animate-heart');
