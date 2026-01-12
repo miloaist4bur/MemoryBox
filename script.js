@@ -94,3 +94,34 @@ checkboxes.forEach((checkbox, index) => {
         localStorage.setItem(`bucket-item-${index}`, checkbox.checked);
     });
 });
+// 6. Floating Love Notes Logic
+const notePhrases = [
+    "I miss you", "Sayang", "Bebe", "❤️", "Soon", "Princess", "My support system"
+];
+
+function createFloatingNote() {
+    const container = document.getElementById('floating-notes-container');
+    const note = document.createElement('div');
+    
+    note.className = 'floating-note';
+    note.innerText = notePhrases[Math.floor(Math.random() * notePhrases.length)];
+    
+    // Random position and delay
+    note.style.left = Math.random() * 90 + "vw";
+    note.style.animationDelay = Math.random() * 5 + "s";
+    note.style.fontSize = (Math.random() * 0.5 + 0.8) + "rem";
+    
+    container.appendChild(note);
+    
+    // Remove after animation finishes
+    setTimeout(() => {
+        note.remove();
+    }, 8000);
+}
+
+// Spawn a new note every 3 seconds
+setInterval(createFloatingNote, 3000);
+
+// 7. Distance Logic (Approx JB to Sabah)
+// You can update this number if you want to be more specific!
+document.getElementById('km-distance').innerText = "815";

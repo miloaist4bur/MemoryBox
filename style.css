@@ -291,3 +291,59 @@ h1 {
 .list-item label {
     cursor: pointer;
 }
+/* Distance Tracker Styling */
+.distance-container {
+    margin-top: 20px;
+    animation: fadeIn 2s ease-in;
+}
+
+.distance-text {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.location-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0.6;
+}
+
+/* Floating Love Notes Styling */
+#floating-notes-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* So she can still click things through the notes */
+    z-index: 999;
+    overflow: hidden;
+}
+
+.floating-note {
+    position: absolute;
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0;
+    white-space: nowrap;
+    animation: floatUp 8s linear infinite;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(110vh) translateX(0);
+        opacity: 0;
+    }
+    10% { opacity: 0.4; }
+    90% { opacity: 0.4; }
+    100% {
+        transform: translateY(-10vh) translateX(20px);
+        opacity: 0;
+    }
+}
