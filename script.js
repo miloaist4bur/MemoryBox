@@ -15,15 +15,36 @@ function updateTimers() {
     document.getElementById('days-official').innerText = daysOfficial;
 }
 
-// Hug Animation
+// Message of the Day Logic
+const dailyMessages = [
+    "You're my favorite person to crashout with. ❤️",
+    "Just a reminder that you're doing amazing at uni today.",
+    "I'm so proud of everything you're becoming.",
+    "Counting down the seconds until I can finally see you.",
+    "You make everything feel a little bit brighter.",
+    "I'm so lucky i decided to hit you up on IG."
+];
+
+function displayMOTD() {
+    const motdElement = document.getElementById('motd-text');
+    const randomIndex = Math.floor(Math.random() * dailyMessages.length);
+    motdElement.innerText = dailyMessages[randomIndex];
+}
+
+// Dark Mode Toggle
+const toggleBtn = document.getElementById('dark-mode-toggle');
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    toggleBtn.innerText = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
+});
+
+// Virtual Hug Animation
 const hugBtn = document.getElementById('hug-btn');
 const heartOverlay = document.getElementById('heart-overlay');
 
 hugBtn.addEventListener('click', () => {
     heartOverlay.classList.remove('hidden');
     heartOverlay.classList.add('animate-heart');
-    
-    // Hide it again after the animation ends
     setTimeout(() => {
         heartOverlay.classList.add('hidden');
         heartOverlay.classList.remove('animate-heart');
@@ -34,8 +55,7 @@ hugBtn.addEventListener('click', () => {
 const studyQuotes = [
     "You got this, bebe! Focus mode on! 📚",
     "I'm so proud of you sayang.",
-    "Take a break, drink some water. You're doing great my princess.",
-    "Don't be stressed, I'm here for you always."
+    "Take a break, drink some water. You're doing great my princess."
 ];
 
 document.getElementById('study-btn').addEventListener('click', () => {
@@ -43,23 +63,18 @@ document.getElementById('study-btn').addEventListener('click', () => {
     alert(msg);
 });
 
-// Surprise Messages
-const messages = [
+// Surprise Message Button
+const surpriseMessages = [
     "Abil Kalogeras loves you so much! ❤️",
-    "I'm so glad i decided to hit you up on IG.",
     "Your smile is my favorite thing.",
     "I'm so lucky to be your support system."
 ];
 
 document.getElementById('surprise-btn').addEventListener('click', () => {
-    const msg = messages[Math.floor(Math.random() * messages.length)];
+    const msg = surpriseMessages[Math.floor(Math.random() * surpriseMessages.length)];
     alert(msg);
 });
 
-// Start the timers
+// Initialize on Load
 updateTimers();
-const toggleBtn = document.getElementById('dark-mode-toggle');
-toggleBtn.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    toggleBtn.innerText = document.body.classList.contains('dark-mode') ? "☀️ Light Mode" : "🌙 Dark Mode";
-});
+displayMOTD();

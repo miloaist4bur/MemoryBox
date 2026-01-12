@@ -13,20 +13,11 @@
 </head>
 <body>
     <button id="dark-mode-toggle" class="theme-btn">🌙 Dark Mode</button>
-<div class="spotify-container">
-    <h3 class="soundtrack-caption">Our Soundtrack</h3>
-    <iframe data-testid="embed-iframe" 
-        style="border-radius:12px" 
-        src="https://open.spotify.com/embed/playlist/55gpR06Gqcqd3becihbvI8?utm_source=generator" 
-        width="100%" 
-        height="352" 
-        frameBorder="0" 
-        allowfullscreen="" 
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-        loading="lazy"></iframe>
-</div>
+
     <header>
         <h1>FABIL˗ˋˏ ♡ ˎˊ˗</h1>
+        <p class="subtitle">From Discord to IG, and now my favorite person.</p>
+        
         <div class="timer-container">
             <div class="timer-box">
                 <span id="days-known" class="timer-number">0</span>
@@ -37,51 +28,68 @@
                 <span class="timer-label">Days Official</span>
             </div>
         </div>
-        <p class="subtitle">From Discord to IG, and now my favorite person.</p>
     </header>
 
+    <div class="spotify-wrapper">
+        <h3 class="soundtrack-caption">Our Soundtrack</h3>
+        <iframe data-testid="embed-iframe" 
+            style="border-radius:12px" 
+            src="https://open.spotify.com/embed/playlist/55gpR06Gqcqd3becihbvI8?utm_source=generator" 
+            width="100%" 
+            height="352" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"></iframe>
+    </div>
+
+    <div class="motd-container">
+        <h3 class="motd-label">Note for you:</h3>
+        <p id="motd-text" class="motd-content">Loading your message...</p>
+    </div>
+
     <main class="memory-grid">
-    <div class="card">
-        <img src="birthday_us.jpg" alt="Official Day" class="card-image">
-        <div class="card-content">
-            <h3>Nov 3, 2025: Official ❤️</h3>
-            <p>The best birthday ever. This was the day you made everything official. I'll never forget this moment.</p>
+        <div class="card">
+            <img src="birthday_us.jpg" alt="Official Day" class="card-image">
+            <div class="card-content">
+                <h3>Nov 3, 2025: Official ❤️</h3>
+                <p>The best birthday ever. This was the day you made everything official. I'll never forget this moment.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="flowers.jpg" alt="Heart Flowers" class="card-image">
-        <div class="card-content">
-            <h3>The Heart Bouquet</h3>
-            <p>You gave me these beautiful roses. I still can't believe how much effort you put into making me feel special.</p>
+        <div class="card">
+            <img src="flowers.jpg" alt="Heart Flowers" class="card-image">
+            <div class="card-content">
+                <h3>The Heart Bouquet</h3>
+                <p>You gave me these beautiful roses. I still can't believe how much effort you put into making me feel special.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="cake.jpg" alt="Birthday Cake" class="card-image">
-        <div class="card-content">
-            <h3>20th Birthday Cake 🎂</h3>
-            <p>"Happy Birthday Abil" The coolest cake from my favourite person.</p>
+        <div class="card">
+            <img src="cake.jpg" alt="Birthday Cake" class="card-image">
+            <div class="card-content">
+                <h3>20th Birthday Cake 🎂</h3>
+                <p>"Happy Birthday Abil" The coolest cake from my favourite person.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="nickname.jpg" alt="Abil Kalogeras" class="card-image">
-        <div class="card-content">
-            <h3>Abil Kalogeras</h3>
-            <p>I remember the first nickname u ever gave me.</p>
+        <div class="card">
+            <img src="nickname.jpg" alt="Abil Kalogeras" class="card-image">
+            <div class="card-content">
+                <h3>Abil Kalogeras</h3>
+                <p>I remember the first nickname u ever gave me.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="card">
-        <img src="comfort.jpg" alt="Don't Crashout" class="card-image">
-        <div class="card-content">
-            <h3>Sept 26: Comforting Words</h3>
-            <p class="comfort-quote">"jgn crashout pls"</p>
-            <p>you always know how to comfort me.</p>
+        <div class="card">
+            <img src="comfort.jpg" alt="Don't Crashout" class="card-image">
+            <div class="card-content">
+                <h3>Sept 26: Comforting Words</h3>
+                <p class="comfort-quote">"jgn crashout pls"</p>
+                <p>you always know how to comfort me.</p>
+            </div>
         </div>
-    </div>
-</main>
+    </main>
 
     <div class="controls">
         <div class="ldr-tools">

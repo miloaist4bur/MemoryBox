@@ -24,92 +24,123 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Centers items horizontally */
     padding-bottom: 50px;
     transition: background-color 0.4s ease, color 0.4s ease;
     text-align: center;
 }
 
-/* 4. TYPOGRAPHY (Bodoni Moda) */
-h1, h2, h3 {
-    font-family: 'Bodoni Moda', serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+/* 4. TYPOGRAPHY */
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-top: 40px;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 3.5rem;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     background: linear-gradient(45deg, var(--text-color), #888);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* 5. MEMORY CARDS & FADE-IN */
+.subtitle {
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* 5. SPOTIFY NEAT BOX */
+.spotify-wrapper {
+    width: 90%;
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 20px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.soundtrack-caption {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    text-transform: uppercase;
+}
+
+/* 6. MESSAGE OF THE DAY */
+.motd-container {
+    width: 85%;
+    max-width: 500px;
+    margin: 20px auto 40px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.motd-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.motd-content {
+    font-family: 'Bodoni Moda', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.4;
+}
+
+/* 7. MEMORY GRID */
 .memory-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     width: 90%;
     max-width: 1000px;
-    margin-top: 40px;
 }
 
 .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 20px;
-    overflow: hidden;
-    /* FADE-IN ANIMATION */
     animation: fadeInUp 1.2s ease-out forwards;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* 6. IMAGE HANDLING (No Cropping) */
 .card-image {
     width: 100%;
     height: auto;
-    max-height: 450px;
-    object-fit: contain; /* Shows full screenshot/pic */
-    background-color: rgba(0,0,0,0.05);
-    display: block;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
-/* 7. THEME TOGGLE BUTTON */
-.theme-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--text-color);
-    color: var(--bg-color);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 20px;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* 8. CONTROLS & TIMERS */
+/* 8. CONTROLS & THEME */
 .timer-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin: 20px 0;
 }
 
@@ -119,24 +150,26 @@ h1 {
     font-family: 'Bodoni Moda', serif;
 }
 
-.comfort-quote {
-    font-family: 'Bodoni Moda', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    padding: 15px;
-    border-left: 3px solid var(--text-color);
-    margin: 15px 0;
-    background: rgba(128, 128, 128, 0.1);
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
-/* 9. INTERACTIVE BUTTONS */
 .controls button {
     background: transparent;
     border: 1px solid var(--text-color);
     color: var(--text-color);
     padding: 12px 24px;
     margin: 10px;
-    font-family: 'Lato', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     cursor: pointer;
@@ -147,29 +180,12 @@ h1 {
     background: var(--text-color);
     color: var(--bg-color);
 }
-.soundtrack-caption {
-    font-family: 'Bodoni Moda', serif;
-    font-size: 1.2rem;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-    color: var(--text-color);
-    text-transform: uppercase;
-    font-style: italic;
-}
 
-.spotify-wrapper {
-    width: 90%;
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 20px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
-    /* This ensures it fades in with the rest of your gift */
-    animation: fadeInUp 1.5s ease-out forwards;
-}
-
-/* Makes sure the iframe doesn't have weird white borders in dark mode */
-iframe {
-    background-color: transparent;
+.hidden { display: none; }
+#heart-overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8rem;
 }
