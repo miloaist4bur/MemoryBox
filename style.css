@@ -1,14 +1,12 @@
 body {
-    background: #fafafa;
-    /* Quicksand is rounded and matches the 'Pacifico' aesthetic */
-    font-family: 'Quicksand', sans-serif;
+    background: #ffffff; /* Pure white for a clean look */
+    font-family: 'Lato', sans-serif;
     margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 50px;
-    text-align: center;
-    -webkit-font-smoothing: antialiased;
+    color: #1a1a1a;
 }
 
 header {
@@ -18,19 +16,22 @@ header {
     border-bottom: 1px solid #dbdbdb;
 }
 
-h1, h2, h3 {
-    font-family: 'Pacifico', cursive;
-    font-weight: 400; /* Pacifico only comes in 400 */
-}
 
+h1, h2, h3 {
+    font-family: 'Bodoni+Moda', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase; /* Makes it look like a luxury brand */
+}
 h1 {
-    background: -webkit-linear-gradient(#833ab4, #fd1d1d, #fcb045);
+    background: linear-gradient(to right, #000000, #434343); /* Sophisticated black/grey gradient */
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 10px 0;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    margin: 20px 0;
 }
+
 .timer-container {
     display: flex;
     justify-content: center;
@@ -71,32 +72,43 @@ h1 {
 }
 
 .comfort-quote {
-    font-family: 'Pacifico', cursive;
-    color: #444;
-    background: #fdf2f2; /* Light pinkish background */
-    padding: 15px;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    margin: 15px 0;
-    border-left: 5px solid #fd1d1d;
+    font-family: 'Bodoni+Moda', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #333;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 20px 0;
+    margin: 20px 0;
+    background: transparent;
 }
 
 .controls { margin-top: 40px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
 .ldr-tools { display: flex; gap: 10px; }
 
 button {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 600;
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    border: 1px solid #000;
+    background: transparent;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 20px; /* More rounded to match fonts */
-    border: none;
-    padding: 12px 25px;
+    transition: 0.3s;
 }
-
+button:hover {
+    background: #000;
+    color: #fff;
+}
 button:active { transform: scale(0.95); }
 
 #hug-btn, #study-btn { background: #e8f0fe; color: #1a73e8; }
-#surprise-btn { background: #0095f6; color: white; width: 250px; }
+#surprise-btn {
+    background: #000;
+    color: #fff;
+    width: 280px;
+}
 
 #heart-overlay {
     position: fixed;
