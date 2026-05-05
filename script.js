@@ -125,3 +125,19 @@ setInterval(createFloatingNote, 3000);
 // 7. Distance Logic (Approx JB to Sabah)
 // You can update this number if you want to be more specific!
 document.getElementById('km-distance').innerText = "815";
+document.addEventListener("DOMContentLoaded", function() {
+    const secretContent = document.getElementById('secret-content');
+    const lockMessage = document.getElementById('lock-message');
+    
+    // Set the birthday date (May 29, 2026)
+    const birthday = new Date('2026-05-6T00:00:00').getTime();
+    const now = new Date().getTime();
+
+    if (now >= birthday) {
+        secretContent.style.display = 'block';
+        lockMessage.style.display = 'none';
+    } else {
+        secretContent.style.display = 'none';
+        lockMessage.style.display = 'block';
+    }
+});

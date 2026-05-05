@@ -346,4 +346,35 @@ h1 {
         transform: translateY(-10vh) translateX(20px);
         opacity: 0;
     }
+    :root {
+    --pastel-pink: #FFC0CB;
+    --soft-blush: #FFF0F5;
+    --deep-pink: #DB7093;
+}
+
+body {
+    background-color: var(--soft-blush); /* Soft pink background */
+    color: #4A4A4A;
+}
+
+.birthday-card {
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 500px;
+    background: white;
+    border: 3px solid var(--pastel-pink);
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+}
+
+#lock-message p {
+    font-style: italic;
+    color: var(--deep-pink);
+}
+
+h1 {
+    color: var(--deep-pink);
+    font-family: 'Georgia', serif; /* Or any cute font you have */
+}
 }
